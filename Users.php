@@ -12,7 +12,7 @@
      
      public function verifyEmail(){
          
-         return "Is ".$this -> emailAddress ." your valid email address?";
+         return "Is <b>".$this -> emailAddress ."</b> your valid email address?";
      }
      
  }
