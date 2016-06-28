@@ -6,6 +6,8 @@ class Car {
     public $color = 'beige';
     public $hasSunRoof = true;
     public $tank;
+    //private access modifiers
+    private $model;
     
     //methods
     public function hello (){
@@ -28,6 +30,16 @@ class Car {
         $this->tank-=$gallons;
         
         return $this;
+    }
+    
+    //the public access modifier allows the access to the method from outside the class
+    public function setModel($model)
+    {
+        $this -> model = $model;
+    }
+    
+    public function getModel(){
+        return "The car model is ". $this->model;
     }
 }
 
@@ -63,3 +75,7 @@ $tank = $bmw -> fill(10) -> ride(40) -> tank;
  
 // Print the results to the screen.
 echo "The number of gallons left in the tank: " . $tank . " gal.";
+echo "<hr />";
+$mercedes -> setModel("Mercedes Benz");
+//Here we access a method from outside the class
+echo $mercedes -> getModel();
